@@ -12,7 +12,7 @@ def format_traceback(no_tb=False):
     # This is needed when testing chaining and cause without traceback.
     # We set `err.__traceback__ = None` in tests and apparently that makes
     # `tb` here `None´ with Python 3.11 but not with others.
-    if sys.version_info < (3, 11) and no_tb:
+    if no_tb:
         tb = None
     return "".join(traceback.format_exception(e, v, tb)).rstrip()
 
