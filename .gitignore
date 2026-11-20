@@ -33,3 +33,8 @@ __pycache__
 node_modules
 .cache/
 .parcel-cache/
+# Shell redirection artifacts
+=[0-9]*
+>[0-9]*
+*.tmp
+*.log
