@@ -74,7 +74,7 @@ class TestGetErrorDetails(unittest.TestCase):
                 raise RuntimeError("higher") from err
         except Exception as err:
             err.__traceback__ = None
-            assert_equal(ErrorDetails(err).traceback, format_traceback(no_tb=True))
+            assert_equal(ErrorDetails(err).traceback, format_traceback(None))
 
     def test_cause(self):
         try:
@@ -87,7 +87,7 @@ class TestGetErrorDetails(unittest.TestCase):
             raise ValueError("err") from TypeError("cause")
         except ValueError as err:
             err.__traceback__ = None
-            assert_equal(ErrorDetails(err).traceback, format_traceback(no_tb=True))
+            assert_equal(ErrorDetails(err).traceback, format_traceback(None))
 
 
 class TestRemoveRobotEntriesFromTraceback(unittest.TestCase):
